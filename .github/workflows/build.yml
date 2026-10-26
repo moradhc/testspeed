@@ -1,0 +1,38 @@
+name: Build DateSpeedBar (roothide)
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      THEOS: ${{ github.workspace }}/theos
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Dependencias del sistema
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential fakeroot rsync perl curl git dpkg-dev
+
+      - name: Clonar Theos (fork de roothide)
+        run: git clone --recursive https://github.com/roothide/theos.git "$THEOS"
+
+      - name: Instalar toolchain arm64e y SDK de iOS
+        run: |
+          mkdir -p "$THEOS/toolchain"
+          curl -fsSL https://github.com/L1ghtmann/llvm-project/releases/latest/download/iOSToolchain-x86_64.tar.xz | tar -xJf - -C "$THEOS/toolchain/"
+          "$THEOS/bin/install-sdk" latest
+
+      - name: Compilar paquete
+        run: make package FINALPACKAGE=1
+
+      - name: Subir el .deb
+        uses: actions/upload-artifact@v4
+        with:
+          name: DateSpeedBar-deb
+          path: packages/*.deb
+          if-no-files-found: error
