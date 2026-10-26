@@ -1,0 +1,10 @@
+{
+	CFBundleDevelopmentRegion = en;
+	CFBundleExecutable = DateSpeedBarPrefs;
+	CFBundleIdentifier = "com.juana.datespeedbar.prefs";
+	CFBundleInfoDictionaryVersion = "6.0";
+	CFBundleName = DateSpeedBarPrefs;
+	CFBundlePackageType = BNDL;
+	CFBundleVersion = "1.0";
+	NSPrincipalClass = DSBRootListController;
+}

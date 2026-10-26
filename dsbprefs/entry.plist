@@ -1,0 +1,9 @@
+{
+	entry = {
+		bundle = DateSpeedBarPrefs;
+		cell = PSLinkCell;
+		detail = DSBRootListController;
+		isController = 1;
+		label = DateSpeedBar;
+	};
+}

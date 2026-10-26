@@ -1,0 +1,8 @@
+Package: com.juana.datespeedbar
+Name: DateSpeedBar
+Version: 1.0.0
+Section: Tweaks
+Depends: mobilesubstrate, preferenceloader
+Author: Juana
+Maintainer: Juana
+Description: Fecha (dd/mm/aaaa) encima del reloj y velocimetro de red (bajada/subida) debajo, en la barra de estado. Reloj reducible y ajustes con sliders. Para roothide arm64e, iOS 15-17.

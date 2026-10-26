@@ -1,0 +1,110 @@
+{
+	items = (
+		{ cell = PSGroupCell; label = "Estado"; },
+		{
+			cell = PSSwitchCell;
+			label = "Activar";
+			key = Enabled;
+			defaults = "com.juana.datespeedbar";
+			default = 1;
+			PostNotification = "com.juana.datespeedbar/prefs";
+		},
+
+		{ cell = PSGroupCell; label = "Fecha (dd/mm/aaaa)"; },
+		{
+			cell = PSSwitchCell;
+			label = "Mostrar fecha";
+			key = ShowDate;
+			defaults = "com.juana.datespeedbar";
+			default = 1;
+			PostNotification = "com.juana.datespeedbar/prefs";
+		},
+
+		{ cell = PSGroupCell; label = "Velocimetro"; },
+		{
+			cell = PSSwitchCell;
+			label = "Mostrar velocidad";
+			key = ShowSpeed;
+			defaults = "com.juana.datespeedbar";
+			default = 1;
+			PostNotification = "com.juana.datespeedbar/prefs";
+		},
+		{
+			cell = PSSwitchCell;
+			label = "Mostrar subida (flecha arriba)";
+			key = ShowUpload;
+			defaults = "com.juana.datespeedbar";
+			default = 1;
+			PostNotification = "com.juana.datespeedbar/prefs";
+		},
+
+		{
+			cell = PSGroupCell;
+			label = "Tamano del reloj";
+			footerText = "A la izquierda = reloj mas pequeno, deja mas sitio arriba y abajo para la fecha y la velocidad.";
+		},
+		{
+			cell = PSSliderCell;
+			key = ClockScale;
+			defaults = "com.juana.datespeedbar";
+			default = 0.78;
+			min = 0.3;
+			max = 1.0;
+			PostNotification = "com.juana.datespeedbar/prefs";
+		},
+
+		{ cell = PSGroupCell; label = "Tamano de la fecha"; },
+		{
+			cell = PSSliderCell;
+			key = DateSize;
+			defaults = "com.juana.datespeedbar";
+			default = 8;
+			min = 6;
+			max = 14;
+			PostNotification = "com.juana.datespeedbar/prefs";
+		},
+
+		{ cell = PSGroupCell; label = "Tamano de la velocidad"; },
+		{
+			cell = PSSliderCell;
+			key = SpeedSize;
+			defaults = "com.juana.datespeedbar";
+			default = 8;
+			min = 6;
+			max = 14;
+			PostNotification = "com.juana.datespeedbar/prefs";
+		},
+
+		{ cell = PSGroupCell; label = "Separacion entre lineas"; },
+		{
+			cell = PSSliderCell;
+			key = Gap;
+			defaults = "com.juana.datespeedbar";
+			default = 1;
+			min = 0;
+			max = 6;
+			PostNotification = "com.juana.datespeedbar/prefs";
+		},
+
+		{
+			cell = PSGroupCell;
+			label = "Ajuste vertical";
+			footerText = "Sube o baja todo el conjunto (fecha / reloj / velocidad) si queda descolocado respecto a la isla dinamica.";
+		},
+		{
+			cell = PSSliderCell;
+			key = YOffset;
+			defaults = "com.juana.datespeedbar";
+			default = 0;
+			min = -8;
+			max = 8;
+			PostNotification = "com.juana.datespeedbar/prefs";
+		},
+
+		{
+			cell = PSGroupCell;
+			footerText = "DateSpeedBar - roothide arm64e - iOS 15-17. Si un cambio no se ve al instante, bloquea y desbloquea la pantalla.";
+		},
+	);
+	title = DateSpeedBar;
+}
